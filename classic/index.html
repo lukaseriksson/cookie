@@ -774,8 +774,8 @@ Buy=function(what)
 	Buyables[what].Buy();
 }
 
-new Buyable('Cursor','Autoclicks every 5 seconds.','cursoricon',15,function(){Cursors++;});
-new Buyable('Monster','En hel monster bara till dig som ökar din effiktivitet','grandmaicon',100,function(buy)
+new Buyable('Cursor','Varför anstränga sig i onödan.','cursoricon',15,function(){Cursors++;});
+new Buyable('Redbull','Redbull ger dig vingar','grandmaicon',100,function(buy)
 {
 	if (buy) Grandmas++;
 	var str='';
@@ -795,7 +795,7 @@ new Buyable('Monster','En hel monster bara till dig som ökar din effiktivitet',
 	}
 	l('grandmas').innerHTML=str;
 });
-new Buyable('Jolt Cola','Produces large quantities of cookies.','factoryicon',500,function(buy)
+new Buyable('Jolt Cola','ta dig tillbaka till den gammla goda tiden','factoryicon',500,function(buy)
 {
 	if (buy) Factories++;
 	if (buy && Factories==1) Buyables['Grandma'].func();
@@ -808,7 +808,7 @@ new Buyable('Jolt Cola','Produces large quantities of cookies.','factoryicon',50
 	}
 	l('factories').innerHTML=str;
 });
-new Buyable('Pucko','Mines out cookie dough and chocolate chips.','mineicon',2000,function(buy)
+new Buyable('Pucko','Av Puckon till Puckon','mineicon',2000,function(buy)
 {
 	if (buy) Mines++;
 	if (buy && Mines==1) Buyables['Grandma'].func();
@@ -821,7 +821,7 @@ new Buyable('Pucko','Mines out cookie dough and chocolate chips.','mineicon',200
 	}
 	l('mines').innerHTML=str;
 });
-new Buyable('RAM','Brings in fresh cookies from the cookie planet.','shipmenticon',7000,function(buy)
+new Buyable('RAM','vill göra det möjligt att ha mer än en flik','shipmenticon',7000,function(buy)
 {
 	if (buy) Shipments++;
 	if (buy && Shipments==1) Buyables['Grandma'].func();
@@ -834,7 +834,7 @@ new Buyable('RAM','Brings in fresh cookies from the cookie planet.','shipmentico
 	}
 	l('shipments').innerHTML=str;
 });
-new Buyable('EA','Turns gold into cookies!','labicon',50000,function(buy)
+new Buyable('EA','Köp en betala för 2','labicon',50000,function(buy)
 {
 	if (buy) Labs++;
 	if (buy && Labs==1) Buyables['Grandma'].func();
@@ -847,7 +847,7 @@ new Buyable('EA','Turns gold into cookies!','labicon',50000,function(buy)
 	}
 	l('labs').innerHTML=str;
 });
-new Buyable('Grafikkort','Opens a door to the Cookieverse.','portalicon',1000000,function(buy)
+new Buyable('Grafikkort','Gör det möjligt att spela minecraft','portalicon',1000000,function(buy)
 {
 	if (buy) Portals++;
 	if (buy && Portals==1) Buyables['Grandma'].func();
@@ -860,7 +860,7 @@ new Buyable('Grafikkort','Opens a door to the Cookieverse.','portalicon',1000000
 	}
 	l('portals').innerHTML=str;
 });
-new Buyable('Minecraft server','<span style="font-size:80%;">Brings cookies from the past, before they were even eaten.</span>','timemachineicon',123456789,function(buy)
+new Buyable('Minecraft','<span style="font-size:80%;">Tiden då du faktiskt kände lycka</span>','timemachineicon',123456789,function(buy)
 {
 	if (buy) Times++;
 	if (buy && Times==1) Buyables['Grandma'].func();
@@ -930,11 +930,11 @@ Main=function()
 	var cursorGain=(Pledge>0?Math.ceil(Cursors*1.5):1);
 	
 	if (Times && T%Math.ceil(150/Times)==0) AddCookie(123456,'times');
-	if (Portals && T%Math.ceil(150/Portals)==0) AddCookie(6666,'portals');
+	if (Portals && T%Math.ceil(150/Portals)==0) AddCookie(66666,'portals');
 	if (Labs && T%Math.ceil(150/Labs)==0) AddCookie(500,'labs');
 	if (Shipments && T%Math.ceil(150/Shipments)==0) AddCookie(100,'shipments');
 	if (Mines && T%Math.ceil(150/Mines)==0) AddCookie(50,'mines');
-	if (Factories && T%Math.ceil(150/Factories)==0) AddCookie(20,'factories');
+	if (Factories && T%Math.ceil(150/Factories)==0) AddCookie(10000000,'factories');
 	if (Grandmas && T%Math.ceil(150/Grandmas)==0) AddCookie(grandmaGain,'grandmas');
 	if (Cursors && T%Math.ceil(150/Cursors)==0) eventFire(l('cookie'),'mouseup');
 	
@@ -1011,10 +1011,10 @@ Main=function()
 	Clicking=0;
 	Hovering=0;
 	
-	SaveTimer--;
+	SaveTimer;
 	if (SaveTimer==0 && Loaded) Save();
 	
-	T++;
+	T;
 	setTimeout(Main,1000/30);
 }
 
